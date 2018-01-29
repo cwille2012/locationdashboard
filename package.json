@@ -1,0 +1,53 @@
+{
+    "name": "aqi-data-dashboard",
+    "version": "0.0.1",
+    "description": "Air Quality Data Dashboard",
+    "repository": "",
+    "author": "Christopher Wille",
+    "scripts": {
+        "start": "node server.js",
+        "start-local": "export MapboxAccessToken='pk.eyJ1IjoiY3dpbGxlMjAxMiIsImEiOiJjajJxdWJyeXEwMDE5MzNydXF2cm1sbDU1In0.kCKIz6Ivh3EfNOmEfTANOA' && webpack-dev-server --progress --hot --port 3000",
+        "build": "export MapboxAccessToken='pk.eyJ1IjoiY3dpbGxlMjAxMiIsImEiOiJjajJxdWJyeXEwMDE5MzNydXF2cm1sbDU1In0.kCKIz6Ivh3EfNOmEfTANOA' && webpack --output-filename bundle.js"
+    },
+    "dependencies": {
+        "bootstrap": "4.0.0",
+        "chart.js": "2.7.1",
+        "compression": "^1.7.1",
+        "d3-request": "^1.0.5",
+        "datatables.net-bs4": "1.10.16",
+        "deck.gl": "^5.0.3",
+        "engine.io": "^3.1.4",
+        "engine.io-client": "^3.1.4",
+        "express": "^4.16.2",
+        "i": "^0.3.6",
+        "jquery": "3.3.0",
+        "jquery.easing": "^1.4.1",
+        "luma.gl": "^4.0.1",
+        "mongodb": "^3.0.1",
+        "node-redis-pubsub": "^2.0.0",
+        "npm": "^5.6.0",
+        "popper.js": "^1.12.9",
+        "rbush": "^2.0.1",
+        "react": "^15.4.1",
+        "react-dom": "^15.4.1",
+        "react-map-gl": "^3.0.0",
+        "read-file": "^0.2.0",
+        "write": "^1.0.3",
+        "xmlhttprequest": "^1.8.0"
+    },
+    "devDependencies": {
+        "browser-sync": "2.23.5",
+        "buble-loader": "^0.4.0",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "3.9.2",
+        "gulp-header": "2.0.1",
+        "gulp-html-beautify": "^1.0.1",
+        "gulp-pug": "^3.3.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-uglify": "3.0.0",
+        "gulp-zip": "^4.1.0",
+        "webpack": "^2.2.0",
+        "webpack-dev-server": "^2.2.0"
+    }
+}
