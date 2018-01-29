@@ -2269,7 +2269,6 @@ socket.on('open', function() {
 
                                 response.push(positionArray);
 
-
                             }
 
                             console.log(data);
@@ -2277,20 +2276,6 @@ socket.on('open', function() {
 
                         }
                     });
-                    // console.log(response);
-
-                    //const data = response.map(d => [Number(d.lng), Number(d.lat)]);
-
-
-
-
-                    /*requestCsv(DATA_URL, (error, response) => {
-                        if (!error) {
-                            const data = response.map(d => [Number(d.lng), Number(d.lat)]);
-                            console.log(data);
-                            this.setState({ data });
-                        }
-                    });*/
 
                 }
 
@@ -2312,10 +2297,67 @@ socket.on('open', function() {
                     });
                 }
 
+                _onHover({ x, y, object }) {
+                    this.setState({ x, y, hoveredObject: object });
+                }
+
+                _onMouseMove(evt) {
+                    if (evt.nativeEvent) {
+                        this.setState({ mousePosition: [evt.nativeEvent.offsetX, evt.nativeEvent.offsetY] });
+                    }
+                }
+
+                _onMouseEnter() {
+                    this.setState({ mouseEntered: true });
+                }
+
+                _onMouseLeave() {
+                    this.setState({ mouseEntered: false });
+                }
+
+                _renderTooltip() {
+                    const { x, y, hoveredObject } = this.state;
+
+                    if (!hoveredObject) {
+                        return null;
+                    }
+
+                    var tooltipExists = !!document.getElementById('tooltip');
+
+                    var hoveredObjectHTML = hoveredObject.address;
+
+                    if (tooltipExists) {
+                        document.getElementById('tooltip').style.position = "absolute";
+                        document.getElementById('tooltip').style.zIndex = 99999;
+                        document.getElementById('tooltip').style.color = '#fff';
+                        document.getElementById('tooltip').style.background = 'rgba(0, 0, 0, 0.8)';
+                        document.getElementById('tooltip').style.padding = '4px';
+                        document.getElementById('tooltip').style.fontSize = '10px';
+                        document.getElementById('tooltip').style.maxWidth = '300px';
+                        document.getElementById('tooltip').style.left = x + 'px';
+                        document.getElementById('tooltip').style.top = y + 'px';
+                        document.getElementById('tooltip').style.cursor = 'pointer';
+                        document.getElementById('tooltip').setAttribute('text-decoration', 'none!important');
+                    }
+
+                    return ( < div id = "tooltip"
+                        style = {
+                            { left: x, top: y }
+                        } >
+                        <
+                        div > { 'Here is the tooltip' } < /div>   < /
+                        div >
+                    );
+                }
+
+
                 render() {
-                    const { viewport, data } = this.state;
+                    const { viewport, data, iconMapping, mousePosition, mouseEntered } = this.state;
 
                     return ( <
+                        div onMouseMove = { this._onMouseMove.bind(this) }
+                        onMouseEnter = { this._onMouseEnter.bind(this) }
+                        onMouseLeave = { this._onMouseLeave.bind(this) } > { this._renderTooltip() } <
                         MapGL {...viewport }
                         mapStyle = "mapbox://styles/mapbox/dark-v9"
                         onViewportChange = { this._onViewportChange.bind(this) }
@@ -2325,22 +2367,13 @@ socket.on('open', function() {
                         data = { data || [] }
                         /> < /
                         MapGL >
+                        <
+                        /div>
                     );
                 }
             }
 
             render( < Root / > , document.getElementById('mapHolder').appendChild(document.createElement('div')));
-
-
-
-
-
-
-
-
-
-
-
 
 
         } else {
