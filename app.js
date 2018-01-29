@@ -4,6 +4,7 @@ import MapGL from 'react-map-gl';
 import DeckGLOverlay from './deckgl-overlay.js';
 
 import { csv as requestCsv } from 'd3-request';
+import index from 'deck.gl';
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoiY3dpbGxlMjAxMiIsImEiOiJjajJxdWJyeXEwMDE5MzNydXF2cm1sbDU1In0.kCKIz6Ivh3EfNOmEfTANOA";
 
@@ -2276,7 +2277,7 @@ socket.on('open', function() {
 
                         }
                     });
-
+                    this._onHover = this._onHover.bind(this);
                 }
 
                 componentDidMount() {
