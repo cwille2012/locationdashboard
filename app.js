@@ -2240,8 +2240,6 @@ socket.on('open', function() {
 
             const DATA_URL = 'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv';
 
-
-
             class Root extends Component {
                 constructor(props) {
                     super(props);
@@ -2366,6 +2364,9 @@ socket.on('open', function() {
                         <
                         DeckGLOverlay viewport = { viewport }
                         data = { data || [] }
+                        mousePosition = { mousePosition }
+                        mouseEntered = { mouseEntered }
+                        onHover = { this._onHover.bind(this) }
                         /> < /
                         MapGL >
                         <
