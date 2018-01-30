@@ -6,6 +6,31 @@ import DeckGLOverlay from './deckgl-overlay.js';
 import { csv as requestCsv } from 'd3-request';
 import index from 'deck.gl';
 
+//google maps API: AIzaSyAiOePUc6yazb7uJr8pNfNEqxkTnjJGXCY
+
+/*
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiOePUc6yazb7uJr8pNfNEqxkTnjJGXCY&callback=initMap">
+    </script>
+*/
+
+function codeLatLng(lat, lng) {
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({
+        'latLng': latlng
+    }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                console.log(results[1]);
+            } else {
+                alert('No results found');
+            }
+        } else {
+            alert('Geocoder failed due to: ' + status);
+        }
+    });
+}
+
 const MAPBOX_TOKEN = "pk.eyJ1IjoiY3dpbGxlMjAxMiIsImEiOiJjajJxdWJyeXEwMDE5MzNydXF2cm1sbDU1In0.kCKIz6Ivh3EfNOmEfTANOA";
 
 var socket = require('engine.io-client')('ws://ec2-18-220-229-176.us-east-2.compute.amazonaws.com:3002');
@@ -2338,6 +2363,7 @@ socket.on('open', function() {
                         document.getElementById('tooltip').style.cursor = 'pointer';
                         document.getElementById('tooltip').setAttribute('text-decoration', 'none!important');
                         //console.log(hoveredObject);
+                        codeLatLng(hoveredObject.centroid[1], hoveredObject.centroid[0]);
                     }
 
                     return ( < div id = "tooltip"
