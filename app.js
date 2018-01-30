@@ -2344,7 +2344,7 @@ socket.on('open', function() {
                             { left: x, top: y }
                         } >
                         <
-                        div > { 'Here is the tooltip' + hoveredObject.address } < /div>   < /
+                        div > { 'Here is the tooltip ' + hoveredObject } < /div>   < /
                         div >
                     );
                 }
