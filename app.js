@@ -2345,13 +2345,12 @@ socket.on('open', function() {
                             { left: x, top: y }
                         } >
                         <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div> <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div> <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div> <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div> <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div> <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div> <
-                        div > { 'Here is the tooltip ' + hoveredObject } < /div>   < /
+                        div > { 'Longitude: ' + hoveredObject.centroid[0] } < /div> <
+                        div > { 'Latitude: ' + hoveredObject.centroid[1] } < /div> <
+                        div > { 'Elevation: ' + hoveredObject.elevationValue } < /div> <
+                        div > { 'Color: ' + hoveredObject.colorValue } < /div> <
+                        div > { 'Test value: ' + hoveredObject } < /div> <
+                        div > { 'Test value: ' + hoveredObject } < /div>  < /
                         div >
                     );
                 }
