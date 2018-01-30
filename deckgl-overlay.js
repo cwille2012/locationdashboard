@@ -101,8 +101,8 @@ export default class DeckGLOverlay extends Component {
             return null;
         }
 
-        console.log("Data: ");
-        console.log(data);
+        //console.log("Data: ");
+        //console.log(data);
 
         const layers = [
             new HexagonLayer({

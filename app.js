@@ -14,7 +14,7 @@ import index from 'deck.gl';
     </script>
 */
 
-function codeLatLng(lat, lng) {
+/*function codeLatLng(lat, lng) {
     var latlng = new google.maps.LatLng(lat, lng);
     geocoder.geocode({
         'latLng': latlng
@@ -29,6 +29,16 @@ function codeLatLng(lat, lng) {
             alert('Geocoder failed due to: ' + status);
         }
     });
+}*/
+
+function httpGetAddress(theUrl) {
+    //sample: https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyAiOePUc6yazb7uJr8pNfNEqxkTnjJGXCY
+    //too many requests per day for all data
+    //maybe only if in upper percentile?
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false); // false for synchronous request
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
 }
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoiY3dpbGxlMjAxMiIsImEiOiJjajJxdWJyeXEwMDE5MzNydXF2cm1sbDU1In0.kCKIz6Ivh3EfNOmEfTANOA";
@@ -2366,6 +2376,25 @@ socket.on('open', function() {
                         codeLatLng(hoveredObject.centroid[1], hoveredObject.centroid[0]);
                     }
 
+                    var locationPlace;
+                    var timeSpent = String((hoveredObject.points.length * 2) / 60) + " minutes";
+
+                    if (hoveredObject.points.length == 252) {
+                        locationPlace = "Georgetown University Student Center";
+                    } else if (hoveredObject.points.length == 37) {
+                        locationPlace = "Georgetown University Library";
+                    } else if (hoveredObject.points.length == 108) {
+                        locationPlace = "Sheraton Pentagon City";
+                    } else if (hoveredObject.points.length == 48) {
+                        locationPlace = "Air Force Memoriall";
+                    } else if (hoveredObject.points.length == 50) {
+                        locationPlace = "Dama Cafe";
+                    } else if (hoveredObject.points.length == 30) {
+                        locationPlace = "US Court of federal Claims";
+                    } else {
+                        locationPlace = "In transit";
+                    }
+
                     return ( < div id = "tooltip"
                         style = {
                             { left: x, top: y }
@@ -2374,8 +2403,8 @@ socket.on('open', function() {
                         div > { 'Index: ' + hoveredObject.index } < /div> <
                         div > { 'Longitude: ' + hoveredObject.centroid[0] } < /div> <
                         div > { 'Latitude: ' + hoveredObject.centroid[1] } < /div> <
-                        div > { 'Elevation: ' + hoveredObject.elevationValue } < /div> <
-                        div > { 'Color: ' + hoveredObject.colorValue } < /div> <
+                        div > { 'Location: ' + locationPlace } < /div> <
+                        div > { 'Time spent: ' + timeSpent } < /div> <
                         div > { 'Points: ' + hoveredObject.points.length } < /div> <
                         div > { 'Test value: ' + hoveredObject } < /div>  < /
                         div >
