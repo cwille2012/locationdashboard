@@ -22,7 +22,7 @@ app.get('/status', function(req, res, next) {
 });
 
 app.use(function(req, res) {
-    res.sendFile(path.join(__dirname, 'map.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(port, () => {
