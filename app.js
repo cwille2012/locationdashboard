@@ -2349,7 +2349,7 @@ socket.on('open', function() {
                         div > { 'Latitude: ' + hoveredObject.centroid[1] } < /div> <
                         div > { 'Elevation: ' + hoveredObject.elevationValue } < /div> <
                         div > { 'Color: ' + hoveredObject.colorValue } < /div> <
-                        div > { 'Test value: ' + hoveredObject } < /div> <
+                        div > { 'Points: ' + hoveredObject.points.length } < /div> <
                         div > { 'Test value: ' + hoveredObject } < /div>  < /
                         div >
                     );
