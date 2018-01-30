@@ -2373,7 +2373,7 @@ socket.on('open', function() {
                         document.getElementById('tooltip').style.cursor = 'pointer';
                         document.getElementById('tooltip').setAttribute('text-decoration', 'none!important');
                         //console.log(hoveredObject);
-                        codeLatLng(hoveredObject.centroid[1], hoveredObject.centroid[0]);
+                        //codeLatLng(hoveredObject.centroid[1], hoveredObject.centroid[0]);
                     }
 
                     var locationPlace;
@@ -2391,6 +2391,14 @@ socket.on('open', function() {
                         locationPlace = "Dama Cafe";
                     } else if (hoveredObject.points.length == 30) {
                         locationPlace = "US Court of federal Claims";
+                    } else if (hoveredObject.points.length == 47) {
+                        locationPlace = "Hyatt Rosyln Suites";
+                    } else if (hoveredObject.points.length == 28) {
+                        locationPlace = "Miriam's Kitchen";
+                    } else if (hoveredObject.points.length == 25) {
+                        locationPlace = "Federal Reserve Building";
+                    } else if (hoveredObject.points.length > 15) {
+                        locationPlace = "Unlisted Location";
                     } else {
                         locationPlace = "In transit";
                     }
