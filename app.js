@@ -2347,6 +2347,7 @@ socket.on('open', function() {
                         div > { 'Here is the tooltip ' + hoveredObject } < /div>   < /
                         div >
                     );
+                    console.log(hoveredObject);
                 }
 
 
