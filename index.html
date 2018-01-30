@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Air Quality Dashboard</title>
+    <title>Location Dashboard</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -23,7 +23,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top" onload="indexOnload()">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="index.html">Air Quality</a>
+        <a class="navbar-brand" href="index.html">Location Dashboard</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -281,7 +281,7 @@
             <!-- Area Chart-->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-area-chart"></i>Air Quality Trends</div>
+                    <i class="fa fa-area-chart"></i>Activity Recorded</div>
                 <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="30"></canvas>
                 </div>
@@ -293,7 +293,7 @@
                     <!-- Bar Chart Card-->
                     <div class="card mb-3">
                         <div class="card-header">
-                            <i class="fa fa-bar-chart"></i> Overall Air Quality</div>
+                            <i class="fa fa-bar-chart"></i>Time Spent at Locations</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-8 my-auto">
@@ -329,7 +329,7 @@
             <!-- DataTables Card-->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-table"></i> Raw Sensor Data</div>
+                    <i class="fa fa-table"></i> Raw GPS Data</div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="indexDataTable" width="100%" cellspacing="0">
