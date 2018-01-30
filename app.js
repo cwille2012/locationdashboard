@@ -2377,7 +2377,7 @@ socket.on('open', function() {
                     }
 
                     var locationPlace;
-                    var timeSpent = String((hoveredObject.points.length * 2) / 60) + " minutes";
+                    var timeSpent = String(Math.round((((hoveredObject.points.length * 2) / 60) * 100) / 100)) + " hours";
 
                     if (hoveredObject.points.length == 252) {
                         locationPlace = "Georgetown University Student Center";
