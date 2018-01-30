@@ -2337,7 +2337,7 @@ socket.on('open', function() {
                         document.getElementById('tooltip').style.top = y + 'px';
                         document.getElementById('tooltip').style.cursor = 'pointer';
                         document.getElementById('tooltip').setAttribute('text-decoration', 'none!important');
-                        console.log(hoveredObject);
+                        //console.log(hoveredObject);
                     }
 
                     return ( < div id = "tooltip"

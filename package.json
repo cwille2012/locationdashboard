@@ -1,7 +1,7 @@
 {
-    "name": "aqi-data-dashboard",
+    "name": "location-data-dashboard",
     "version": "0.0.1",
-    "description": "Air Quality Data Dashboard",
+    "description": "Location Data Dashboard",
     "repository": "",
     "author": "Christopher Wille",
     "scripts": {
