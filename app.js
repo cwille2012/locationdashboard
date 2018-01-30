@@ -2350,6 +2350,7 @@ socket.on('open', function() {
                         div > { 'Elevation: ' + hoveredObject.elevationValue } < /div> <
                         div > { 'Color: ' + hoveredObject.colorValue } < /div> <
                         div > { 'Points: ' + hoveredObject.points.length } < /div> <
+                        div > { 'Index: ' + hoveredObject.index } < /div> <
                         div > { 'Test value: ' + hoveredObject } < /div>  < /
                         div >
                     );
