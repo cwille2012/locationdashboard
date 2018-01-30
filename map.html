@@ -68,7 +68,7 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Map">
                     <a class="nav-link" href="map.html">
                         <i class="fa fa-fw fa-map"></i>
-                        <span class="nav-link-text">Quality Map</span>
+                        <span class="nav-link-text">Location Map</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
@@ -86,38 +86,23 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">Sensor Data</span>
+                        <span class="nav-link-text">Health Data</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                         <li>
-                            <a href="pm25.html">Particles (PM2.5)</a>
+                            <a href="#.html">Step Counter</a>
                         </li>
                         <li>
-                            <a href="pm10.html">Particles (PM10)</a>
+                            <a href="#.html">Heart Rate</a>
                         </li>
                         <li>
-                            <a href="carbonmonoxide.html">Carbon Monoxide</a>
-                            <!--mq7-->
+                            <a href="#.html">Floors Climbed</a>
                         </li>
                         <li>
-                            <a href="propane.html">Propane</a>
-                            <!--mq2-->
+                            <a href="#.html">Hours Slept</a>
                         </li>
                         <li>
-                            <a href="butane.html">Butane</a>
-                            <!--mq6-->
-                        </li>
-                        <li>
-                            <a href="hydrogen.html">Hydrogen</a>
-                            <!--mq5-->
-                        </li>
-                        <li>
-                            <a href="methane.html">Methane</a>
-                            <!--mq4-->
-                        </li>
-                        <li>
-                            <a href="benzine.html">Benzine</a>
-                            <!--mq3-->
+                            <a href="#.html">All Data</a>
                         </li>
                     </ul>
                 </li>
@@ -130,40 +115,6 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <!--<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-fw fa-envelope"></i>
-                        <span class="d-lg-none">Messages
-                <span class="badge badge-pill badge-primary">12 New</span>
-                        </span>
-                        <span class="indicator text-primary d-none d-lg-block">
-                <i class="fa fa-fw fa-circle"></i>
-            </span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-                        <h6 class="dropdown-header">New Messages:</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <strong>David Miller</strong>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <strong>Jane Smith</strong>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <strong>John Doe</strong>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item small" href="#">View all messages</a>
-                    </div>
-                </li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-fw fa-bell"></i>
@@ -174,41 +125,37 @@
                 <i class="fa fa-fw fa-circle"></i>
             </span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="alertsDropdown" id="alertsdropdownmenu">
-
-
-
-
-                        <!--<h6 class="dropdown-header">New Alerts:</h6>
+                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">New Alerts:</h6>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
                             <span class="text-success">
                 <strong>
-                    <i class="fa fa-long-arrow-up fa-fw"></i>Credit Applied</strong>
-                </span>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Library Goal Met</strong>
+              </span>
                             <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">Transfer initiated from authorized user.</div>
+                            <div class="dropdown-message small">Congradulations! You spent 1+ hours at the library.</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
                             <span class="text-danger">
                 <strong>
-                    <i class="fa fa-long-arrow-down fa-fw"></i>New Purchase</strong>
-                </span>
+                  <i class="fa fa-long-arrow-down fa-fw"></i>Sleeping Goal Missed</strong>
+              </span>
                             <span class="small float-right text-muted">1:28 PM</span>
-                            <div class="dropdown-message small">Online purchase made (Living Expenses)</div>
+                            <div class="dropdown-message small">You did not get enough sleep.</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
                             <span class="text-success">
                 <strong>
-                    <i class="fa fa-long-arrow-up fa-fw"></i>Credit Applied</strong>
-                </span>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Gym Goal Met</strong>
+              </span>
                             <span class="small float-right text-muted">10:08 PM</span>
-                            <div class="dropdown-message small">Transfer initiated from authorized user.</div>
+                            <div class="dropdown-message small">Congradulations! You spent 1+ hours at the gym.</div>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item small" href="tables.html">View all exchanges</a>-->
+                        <a class="dropdown-item small" href="map.html">View all locations</a>
                     </div>
                 </li>
                 <li class="nav-item">
