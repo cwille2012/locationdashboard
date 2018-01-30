@@ -76,33 +76,8 @@ socket.on('open', function() {
                     timeStamp = timeStamp.replace(/Thu/g, '');
                     timeStamp = timeStamp.replace(/Fri/g, '');
 
-
-                    var pm25 = Math.round(parseFloat(newData[i]['data']['pm25']) * 11.50 * 100) / 100;
-                    var pm10 = Math.round(parseFloat(newData[i]['data']['pm10']) * 2.41 * 100) / 100;
-                    var mq2 = newData[i]['data']['mq2'];
-                    var mq3 = newData[i]['data']['mq3'];
-                    var mq4 = newData[i]['data']['mq4'];
-                    var mq5 = newData[i]['data']['mq5'];
-                    var temp = newData[i]['data']['temperature'];
-                    var hum = newData[i]['data']['humidity'];
-                    //var long = newData[i]['pos']['lon'];
-                    //var lat = newData[i]['pos']['lat'];
-
-                    //var particulates = Math.round(((pm25 + pm10) / 2) * 100) / 100;
-                    var gasses = Math.round(((mq2 + mq3 + mq4 + mq5) / 4) * 100) / 100;
-
-                    var aqi = pm10;
-                    if (pm25 > aqi) {
-                        aqi = pm25;
-                    }
-                    if (gasses > aqi) {
-                        aqi = gasses;
-                    }
-
-                    sumGasses += gasses;
-                    sumPm10 += pm10;
-                    sumPm25 += pm25;
-                    sumAqi += aqi;
+                    var long = newData[i]['pos']['lon'];
+                    var lat = newData[i]['pos']['lat'];
 
                     var tr = document.createElement("tr");
 
@@ -113,46 +88,29 @@ socket.on('open', function() {
                     tr.appendChild(td0);
 
                     var td1 = document.createElement("td");
-                    var text1 = document.createTextNode(String(pm25));
+                    var text1 = document.createTextNode(String(long));
                     td1.setAttribute("id", i + '-pm25');
                     td1.appendChild(text1);
                     tr.appendChild(td1);
 
-                    var td6 = document.createElement("td");
-                    var text6 = document.createTextNode(String(pm10));
-                    td6.setAttribute("id", i + '-pm10');
-                    td6.appendChild(text6);
-                    tr.appendChild(td6);
-
                     var td2 = document.createElement("td");
-                    var text2 = document.createTextNode(String(gasses));
-                    td2.setAttribute("id", i + '-particulates');
+                    var text2 = document.createTextNode(String(lat));
+                    td2.setAttribute("id", i + '-location');
                     td2.appendChild(text2);
                     tr.appendChild(td2);
 
-                    var td4 = document.createElement("td");
-                    var text4 = document.createTextNode(String(aqi));
-                    td4.setAttribute("id", i + '-aqi');
-                    td4.appendChild(text4);
-                    tr.appendChild(td4);
-
                     document.getElementById('indexDataTableBody').appendChild(tr);
                 }
-                var avgGasses = sumGasses / i;
-                var avgPm10 = sumPm10 / i;
-                var avgPm25 = sumPm25 / i;
-                var avgAqi = sumAqi / i;
-                console.log('Average AQI: ' + avgAqi);
 
-                if (!!document.getElementById('averagePm25')) {
-                    document.getElementById('averagePm25').innerHTML = parseInt(avgPm25);
+                /*if (!!document.getElementById('averagePm25')) {
+                    document.getElementById('averagePm25').innerHTML = parseInt(somenum);
                 }
                 if (!!document.getElementById('averagePm10')) {
-                    document.getElementById('averagePm10').innerHTML = parseInt(avgPm10);
+                    document.getElementById('averagePm10').innerHTML = parseInt(somenum);
                 }
                 if (!!document.getElementById('averageOzone')) {
-                    document.getElementById('averageOzone').innerHTML = parseInt(avgGasses);
-                }
+                    document.getElementById('averageOzone').innerHTML = parseInt(somenum);
+                }*/
 
             }
             //add data to area chart:
@@ -2386,7 +2344,7 @@ socket.on('open', function() {
                     } else if (hoveredObject.points.length == 108) {
                         locationPlace = "Sheraton Pentagon City";
                     } else if (hoveredObject.points.length == 48) {
-                        locationPlace = "Air Force Memoriall";
+                        locationPlace = "Air Force Memorial";
                     } else if (hoveredObject.points.length == 50) {
                         locationPlace = "Dama Cafe";
                     } else if (hoveredObject.points.length == 30) {
