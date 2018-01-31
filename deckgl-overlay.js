@@ -86,8 +86,16 @@ export default class DeckGLOverlay extends Component {
         window.clearTimeout(this.intervalTimer);
     }
 
+    // _animateHeight() {
+    //     if (this.state.elevationScale === elevationScale.max) {
+    //         this._stopAnimate();
+    //     } else {
+    //         this.setState({ elevationScale: this.state.elevationScale + 1 });
+    //     }
+    // }
+
     _animateHeight() {
-        if (this.state.elevationScale === elevationScale.max) {
+        if (this.state.elevationScale === 100) {
             this._stopAnimate();
         } else {
             this.setState({ elevationScale: this.state.elevationScale + 1 });
