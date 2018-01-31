@@ -112,8 +112,6 @@ export default class DeckGLOverlay extends Component {
         //console.log("Data: ");
         //console.log(data);
 
-        console.log(layers);
-
         const layers = [
             new HexagonLayer({
                 id: 'heatmap',
@@ -132,6 +130,8 @@ export default class DeckGLOverlay extends Component {
                 upperPercentile
             })
         ];
+
+        console.log(layers);
 
         return <DeckGL {...viewport }
         layers = { layers }
