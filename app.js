@@ -144,7 +144,7 @@ socket.on('open', function() {
 
                             }
 
-                            console.log(data);
+                            //console.log(data);
                             this.setState({ data: response });
 
                         }
@@ -291,7 +291,7 @@ socket.on('open', function() {
             //update message
 
             newData = JSON.parse(newData);
-            console.log(newData);
+            //console.log(newData);
 
         }
 
