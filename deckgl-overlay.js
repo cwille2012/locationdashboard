@@ -86,21 +86,21 @@ export default class DeckGLOverlay extends Component {
         window.clearTimeout(this.intervalTimer);
     }
 
-    // _animateHeight() {
-    //     if (this.state.elevationScale === elevationScale.max) {
-    //         this._stopAnimate();
-    //     } else {
-    //         this.setState({ elevationScale: this.state.elevationScale + 1 });
-    //     }
-    // }
-
     _animateHeight() {
-        if (this.state.elevationScale === 100) {
+        if (this.state.elevationScale === elevationScale.max) {
             this._stopAnimate();
         } else {
             this.setState({ elevationScale: this.state.elevationScale + 1 });
         }
     }
+
+    // _animateHeight() {
+    //     if (this.state.elevationScale === 100) {
+    //         this._stopAnimate();
+    //     } else {
+    //         this.setState({ elevationScale: this.state.elevationScale + 1 });
+    //     }
+    // }
 
     render() {
         const { viewport, data, radius, coverage, upperPercentile } = this.props;
@@ -111,6 +111,8 @@ export default class DeckGLOverlay extends Component {
 
         //console.log("Data: ");
         //console.log(data);
+
+        console.log(layers);
 
         const layers = [
             new HexagonLayer({
