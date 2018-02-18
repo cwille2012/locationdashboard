@@ -130,6 +130,7 @@ socket.on('open', function() {
                         if (!error) {
 
                             var response = new Array();
+                            console.log(newData);
                             for (var i in newData) {
 
                                 var lng = newData[i]['pos']['lon'];
@@ -144,7 +145,7 @@ socket.on('open', function() {
 
                             }
 
-                            //console.log(data);
+                            console.log(response);
                             this.setState({ data: response });
 
                         }
