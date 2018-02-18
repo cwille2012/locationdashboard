@@ -6,7 +6,7 @@ const path = require('path');
 const server = require('./handlers.js');
 
 const app = express();
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 3000;
 
 const environment = process.env.NODE_ENV;
 
