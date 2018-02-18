@@ -131,7 +131,7 @@ export default class DeckGLOverlay extends Component {
             })
         ];
 
-        console.log(layers);
+        //console.log(layers);
 
         return <DeckGL {...viewport }
         layers = { layers }
