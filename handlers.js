@@ -1,5 +1,5 @@
 var engine = require('engine.io');
-var server = engine.listen(3002); //waiting for client socket to connect
+var server = engine.listen(9600); //waiting for client socket to connect
 
 var writeFile = require('write');
 
